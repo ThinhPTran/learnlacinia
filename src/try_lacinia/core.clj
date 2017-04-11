@@ -21,5 +21,8 @@
 
 (app {:uri "/" :request-method :get})
 (app {:uri "/graphql" :request-method :post :body "{ hero { id name}}"})
+(app {:uri "/graphql" :request-method :post :body "{ hero { id name friends { name}}}"})
+(app {:uri "/graphql" :request-method :post :body "{ human { id name}}"})
+
 
 
