@@ -59,6 +59,9 @@
   (-> (filter #(= (get % key) value) data)
       first))
 
+(defn ^:private list-match [data key value]
+  (filter #(= (get % key) value) data))
+
 (defn resolve-hero
   [ctx args value]
   (let [episode (:episode args "NEWHOPE")
@@ -76,3 +79,7 @@
 (defn resolve-human
   [ctx args value]
   (first-match humans-data :id (:id args)))
+
+(defn resolve-humans
+  [ctx args value]
+  humans-data)
