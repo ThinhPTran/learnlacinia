@@ -27,8 +27,6 @@
                             :home_planet {:type String}}}
               :echoed_value
               {:fields     {:value {:type String}}}}
-
-
  :queries    {
               :hero
               {:type    (non-null :character)
@@ -47,5 +45,13 @@
               :humans
               {:type    (list :human)
                :resolve :resolve-humans}
-              :droids}}
-              
+              :droids
+              {:type    (list :droid)
+               :resolve :resolve-droids}}
+ :mutations  {
+              :createHuman
+              {:type    (list :human)
+               :args    {:id     {:type  (non-null String)}
+                         :name   {:type  (non-null String)}}
+               :resolve :resolve-mutate-human}}}
+
